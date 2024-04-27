@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'quoteapp/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Main page</h1>
+        {% for quote in quotes %}
+        <div class="quote">
+            <blockquote>
+                <em>"{{ quote.quote }}"</em>
+            </blockquote>
+            <p>- {{ quote.author }}</p>
+            <p>Tags: {{quote.tags}}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="buttons">
+        <a href="{% url 'users:login' %}" class="custom-button">Увійти</a>
+        <a href="{% url 'users:logout' %}" class="custom-button">Вийти</a>
+        <a href="{% url 'users:signup' %}" class="custom-button">Зареєструватися</a>
+        <a href="{% url 'users:profile' %}" class="custom-button">Profile</a>
+    </div>
+</body>
+</html>

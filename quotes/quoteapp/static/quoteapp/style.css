@@ -1,0 +1,33 @@
+.custom-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 30px; /* Зменшено розміри кнопки */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block; /* Кнопки будуть в одному рядку */
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 10px; /* Заокруглення країв */
+}
+
+
+/*.blue-button {
+    background-color: #0000FF;
+}
+*/
+.buttons {
+   /* bottom: 0;*/
+    width: 100%; /* Змінено на 100%, щоб кнопки були в центрі */
+    text-align: center; /* Кнопки вирівняні по центру */
+}
+
+h1 {
+    color: purple;
+    font-family: 'Courier New', Courier, monospace;
+}
+blockquote {
+    font-size: 30px; /* Розмір тексту цитати */
+    font-style: italic; /* Курсивний текст */
+}

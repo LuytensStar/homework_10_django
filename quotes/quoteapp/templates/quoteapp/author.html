@@ -1,0 +1,38 @@
+{% extends "quoteapp/base.html" %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'quoteapp/style.css' %}">
+<form method="POST" action="{% url 'quoteapp:author' %}">
+    {% csrf_token %}
+    <div style="padding: 10px">
+        <label>Enter the fullname:
+            {{form.fullname}}
+        </label>
+        <span>{{ form.errors.fullname }}</span>
+    </div>
+    <div style="padding: 10px">
+        <label>Enter the born date:
+            {{form.born_date}}
+        </label>
+        <span>{{ form.errors.born_date }}</span>
+    </div>
+    <div style="padding: 10px">
+        <label>Enter the born location:
+            {{form.born_location}}
+        </label>
+        <span>{{ form.errors.born_location }}</span>
+    </div>
+    <div style="padding: 10px">
+        <label>Enter the description:
+            {{form.description}}
+        </label>
+        <span>{{ form.errors.description }}</span>
+    </div>
+    <div class="buttons">
+        <button type="submit" class="custom-button">Прийняти</button>
+        <button type="reset" class="custom-button">Скасувати</button>
+    </div>
+</form>
+
+{% endblock %}
