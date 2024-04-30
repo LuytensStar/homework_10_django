@@ -47,6 +47,6 @@ def author(request):
     return render(request, 'quoteapp/author.html',{'form': AuthorForm()})
 
 def author_profile(request, fullname):
-    author = Author.objects.get(fullname=fullname)
+    author = Author.objects.filter(fullname=fullname).first()
     return render(request, 'quoteapp/author_profile.html', {'author': author})
 
