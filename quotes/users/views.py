@@ -37,8 +37,8 @@ def loginuser(request):
 
 @login_required
 def logoutuser(request):
-    login(request)
-    return redirect(to='qouteapp:main')
+    logout(request)
+    return redirect(to='quoteapp:main')
 
 @login_required
 def profile(request):

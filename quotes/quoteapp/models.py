@@ -3,9 +3,9 @@ from django.db import models
 
 class Author(models.Model):
     fullname = models.CharField(max_length=200, null=False)
-    born_date = models.CharField(max_length=50,blank=True)
-    born_location = models.CharField(max_length=50, blank=True)
-    description = models.CharField(max_length=10000, blank=True)
+    born_date = models.CharField(max_length=100,blank=True)
+    born_location = models.CharField(max_length=100, blank=True)
+    description = models.CharField(max_length=100000, blank=True)
     user = models.ForeignKey(User,on_delete=models.CASCADE,default=1)
 
     class Meta:

@@ -16,11 +16,17 @@
             <blockquote>
                 <em>"{{ quote.quote }}"</em>
             </blockquote>
-            <p>- {{ quote.author }}</p>
-            <p>Tags: {{quote.tags}}</p>
+            <p style="font-size: 1.2em;">- {{ quote.author }} <a href="{% url 'quoteapp:author_profile' quote.author %}" class="custom-button">Перейти до профілю автора</a> </p>
+            <p style="font-size: 1.2em;">Tags: {{quote.tags}}</p>
         </div>
         {% endfor %}
     </div>
+    {% if user.is_authenticated %}
+    <div class="buttons">
+        <a href="{% url 'quoteapp:quote' %}" class="custom-button">Додати нову цитату</a>
+        <a href="{% url 'quoteapp:author' %}" class="custom-button">Додати нового автора</a>
+    </div>
+    {% endif %}
     <div class="buttons">
         <a href="{% url 'users:login' %}" class="custom-button">Увійти</a>
         <a href="{% url 'users:logout' %}" class="custom-button">Вийти</a>
